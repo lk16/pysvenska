@@ -23,10 +23,16 @@ def quiz_words(words):
             input = str(sys.stdin.readline())[:-1]
             if input == w[1]:
                 words.remove(w)
-                print("Correct. {} words remainig".format(len(words)))
+                print("Correct. {} words remaining".format(len(words)))
             else:
                 print("Wrong. The correct answer is \"{}\"".format(w[1]))
 
+
+def reverse_words(words):
+    res = []
+    for w in words:
+        res.append((w[1],w[0]))
+    return res
 
 
 
@@ -35,7 +41,13 @@ def main():
         print("Usage: {} <wordsfile>".format(sys.argv[0]))
         return
     words = read_words_file(sys.argv[1])
+
+    if (len(sys.argv) > 2) and (sys.argv[2] == "-r"):
+        words = reverse_words(words)    
+
     quiz_words(words)
+
+
 
 if __name__ == "__main__":
     main()
