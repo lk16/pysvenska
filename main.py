@@ -34,7 +34,7 @@ def main():
     if len(sys.argv) < 2:
         print("Usage: {} <wordsfile>".format(sys.argv[0]))
         return
-    words = read_words_file("svenska01")
+    words = read_words_file(sys.argv[1])
     
 
     quiz_words(words)
