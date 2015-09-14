@@ -18,7 +18,7 @@ def read_words_file(filename):
 def quiz_words(words):
     while len(words) > 0:
         random.shuffle(words)
-        for w in words:
+       	for w in words:
             print("{} ".format(w[0]))
             input = str(sys.stdin.readline())[:-1]
             if input == w[1]:
@@ -35,8 +35,6 @@ def main():
         print("Usage: {} <wordsfile>".format(sys.argv[0]))
         return
     words = read_words_file(sys.argv[1])
-    
-
     quiz_words(words)
 
 if __name__ == "__main__":
